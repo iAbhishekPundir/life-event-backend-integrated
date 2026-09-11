@@ -1,0 +1,82 @@
+{
+  "Marriage": [
+    {
+      "recommendation_id": "REC-001",
+      "recommendation_name": "Joint Savings Account",
+      "rationale": "Supports joint financial planning after marriage."
+    },
+    {
+      "recommendation_id": "REC-002",
+      "recommendation_name": "Couple Insurance Plans",
+      "rationale": "Supports protection planning for the couple."
+    },
+    {
+      "recommendation_id": "REC-003",
+      "recommendation_name": "Emergency Fund Planning",
+      "rationale": "Supports short-term financial resilience during a major life transition."
+    },
+    {
+      "recommendation_id": "REC-004",
+      "recommendation_name": "Goal-Based Investment Plan for House Purchase",
+      "rationale": "Supports long-term goal planning after marriage."
+    }
+  ],
+  "Travel": [
+    {
+      "recommendation_id": "REC-101",
+      "recommendation_name": "Travel Insurance",
+      "rationale": "Supports financial protection during travel."
+    },
+    {
+      "recommendation_id": "REC-102",
+      "recommendation_name": "Travel Credit Card",
+      "rationale": "Supports travel-related spending benefits and rewards."
+    },
+    {
+      "recommendation_id": "REC-103",
+      "recommendation_name": "Foreign Exchange Service",
+      "rationale": "Supports international travel and foreign currency needs."
+    }
+  ],
+  "Birthday": [
+    {
+      "recommendation_id": "REC-201",
+      "recommendation_name": "Savings Goal Review",
+      "rationale": "A birthday milestone can be used to review personal savings goals."
+    },
+    {
+      "recommendation_id": "REC-202",
+      "recommendation_name": "Investment Portfolio Review",
+      "rationale": "Supports milestone-based financial planning."
+    }
+  ],
+  "Home Purchase": [
+    {
+      "recommendation_id": "REC-301",
+      "recommendation_name": "Mortgage Consultation",
+      "rationale": "Supports home purchase planning and affordability review."
+    },
+    {
+      "recommendation_id": "REC-302",
+      "recommendation_name": "Home Insurance Review",
+      "rationale": "Supports protection needs related to home ownership."
+    },
+    {
+      "recommendation_id": "REC-303",
+      "recommendation_name": "Emergency Fund Planning",
+      "rationale": "Supports financial resilience during home purchase or relocation."
+    }
+  ],
+  "Education": [
+    {
+      "recommendation_id": "REC-401",
+      "recommendation_name": "Education Savings Plan",
+      "rationale": "Supports education-related financial planning."
+    },
+    {
+      "recommendation_id": "REC-402",
+      "recommendation_name": "Student Account Review",
+      "rationale": "Supports banking needs for education or student life."
+    }
+  ]
+}

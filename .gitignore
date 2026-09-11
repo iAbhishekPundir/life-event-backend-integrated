@@ -1,0 +1,27 @@
+.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+tmp_pydantic_core_check/
+.DS_Store
+
+# Editor backups left behind by patch tools
+*.bak
+*.bak.*
+
+# IDE
+.vscode/
+.idea/
+
+# Test/lint/type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,82 @@
+{
+  "Marriage": [
+    {
+      "task_name": "Advisor Call",
+      "task_type": "CRM Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Insurance Review",
+      "task_type": "Review Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Goal Planning Session",
+      "task_type": "Meeting",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Nominee Update Request",
+      "task_type": "Operations",
+      "assigned_to": "Operations Team"
+    }
+  ],
+  "Travel": [
+    {
+      "task_name": "Travel Advisory Call",
+      "task_type": "CRM Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Travel Insurance Review",
+      "task_type": "Review Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Foreign Exchange Service Follow Up",
+      "task_type": "Operations",
+      "assigned_to": "Operations Team"
+    }
+  ],
+  "Birthday": [
+    {
+      "task_name": "Birthday Milestone Financial Review",
+      "task_type": "CRM Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Savings Goal Review",
+      "task_type": "Review Task",
+      "assigned_to": "Relationship Advisor"
+    }
+  ],
+  "Home Purchase": [
+    {
+      "task_name": "Mortgage Consultation",
+      "task_type": "Meeting",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Home Insurance Review",
+      "task_type": "Review Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Affordability Documentation Review",
+      "task_type": "Operations",
+      "assigned_to": "Operations Team"
+    }
+  ],
+  "Education": [
+    {
+      "task_name": "Education Planning Review",
+      "task_type": "CRM Task",
+      "assigned_to": "Relationship Advisor"
+    },
+    {
+      "task_name": "Student Banking Review",
+      "task_type": "Review Task",
+      "assigned_to": "Relationship Advisor"
+    }
+  ]
+}

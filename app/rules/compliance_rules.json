@@ -1,0 +1,79 @@
+{
+  "common_checks": [
+    {
+      "check_id": "CHK-001",
+      "check_name": "KYC Status",
+      "description": "KYC must be valid before account, insurance, or investment recommendations are activated.",
+      "required": true,
+      "failure_status": "Blocked"
+    },
+    {
+      "check_id": "CHK-002",
+      "check_name": "Nominee Status",
+      "description": "Nominee details should be checked for insurance and investment-related recommendations.",
+      "required": true,
+      "failure_status": "Review Required"
+    },
+    {
+      "check_id": "CHK-003",
+      "check_name": "Joint Account Eligibility",
+      "description": "Joint account eligibility must be checked before recommending joint account products.",
+      "required": true,
+      "failure_status": "Blocked"
+    },
+    {
+      "check_id": "CHK-004",
+      "check_name": "Regulatory Disclosures",
+      "description": "Required disclosures must be identified before customer engagement.",
+      "required": true,
+      "failure_status": "Review Required"
+    },
+    {
+      "check_id": "CHK-005",
+      "check_name": "Product Suitability",
+      "description": "Recommended products must be suitable for the customer profile and detected life event.",
+      "required": true,
+      "failure_status": "Review Required"
+    },
+    {
+      "check_id": "CHK-006",
+      "check_name": "Communication Consent",
+      "description": "Communication journeys must respect customer consent and communication preferences.",
+      "required": true,
+      "failure_status": "Blocked"
+    },
+    {
+      "check_id": "CHK-007",
+      "check_name": "Human Approval",
+      "description": "Human approval is required before recommendations are presented to the customer.",
+      "required": true,
+      "failure_status": "Pending Human Approval"
+    }
+  ],
+  "business_rules": [
+    {
+      "rule_id": "RULE-003",
+      "description": "Recommendations shall not be sent to customers without required human approval."
+    },
+    {
+      "rule_id": "RULE-004",
+      "description": "Compliance checks shall be completed before recommendations are activated."
+    },
+    {
+      "rule_id": "RULE-005",
+      "description": "KYC-related recommendations shall require valid and up-to-date KYC records."
+    },
+    {
+      "rule_id": "RULE-008",
+      "description": "Communication journeys shall respect customer consent and communication preferences."
+    },
+    {
+      "rule_id": "RULE-009",
+      "description": "If a recommendation fails compliance validation, it shall be marked as blocked or review required."
+    }
+  ],
+  "customer_facing_recommendation_requires_human_approval": true,
+  "failed_compliance_status": "Blocked",
+  "review_required_status": "Review Required",
+  "default_approval_status": "Pending Human Approval"
+}

@@ -1,0 +1,306 @@
+{
+  "rule_version": "1.1",
+  "scoring_strategy": "rules_first_ml_confidence",
+  "default_customer_facing_allowed": false,
+  "default_approval_status": "Pending Human Approval",
+  "life_events": [
+    {
+      "life_event_type": "Marriage",
+      "enabled": true,
+      "candidate_threshold": 0.4,
+      "minimum_confidence_score": 0.7,
+      "minimum_matched_signals": 2,
+      "estimated_timeline": "6 to 9 months",
+      "approval_required": true,
+      "description": "Detects likely marriage or wedding planning based on transaction patterns.",
+      "transaction_signals": [
+        {
+          "signal_name": "Jewellery purchase greater than configured threshold",
+          "merchant_category": "Jewellery",
+          "minimum_amount": 1500,
+          "weight": 0.3,
+          "feature_name": "jewellery_spend_signal"
+        },
+        {
+          "signal_name": "Venue booking deposit detected",
+          "merchant_category": "Event Booking",
+          "minimum_amount": 500,
+          "weight": 0.25,
+          "feature_name": "event_booking_signal"
+        },
+        {
+          "signal_name": "Increased spending on fashion or photography vendors",
+          "merchant_category": "Lifestyle",
+          "minimum_amount": 300,
+          "weight": 0.2,
+          "feature_name": "lifestyle_spend_signal"
+        },
+        {
+          "signal_name": "Travel bookings for multiple family members",
+          "merchant_category": "Travel",
+          "minimum_amount": 1000,
+          "weight": 0.2,
+          "feature_name": "family_travel_signal"
+        }
+      ],
+      "ml_features": [
+        "matched_signal_count",
+        "total_event_related_spend",
+        "merchant_category_diversity",
+        "transaction_frequency",
+        "transaction_recency",
+        "customer_age",
+        "annual_income",
+        "risk_profile"
+      ],
+      "validation_rules": {
+        "requires_consent": true,
+        "requires_active_customer": true,
+        "requires_human_approval": true,
+        "block_if_confidence_below_threshold": true
+      },
+      "llm_context_fields": [
+        "customer_name",
+        "life_event_type",
+        "confidence_score",
+        "estimated_timeline",
+        "key_drivers",
+        "matched_signals",
+        "customer_profile"
+      ],
+      "recommended_next_step": "Personalised Recommendation"
+    },
+    {
+      "life_event_type": "Travel",
+      "enabled": true,
+      "candidate_threshold": 0.35,
+      "minimum_confidence_score": 0.6,
+      "minimum_matched_signals": 2,
+      "estimated_timeline": "1 to 3 months",
+      "approval_required": true,
+      "description": "Detects likely travel planning based on travel, hotel, and foreign exchange transactions.",
+      "transaction_signals": [
+        {
+          "signal_name": "Large travel booking detected",
+          "merchant_category": "Travel",
+          "minimum_amount": 1200,
+          "weight": 0.4,
+          "feature_name": "large_travel_booking_signal"
+        },
+        {
+          "signal_name": "Hotel booking detected",
+          "merchant_category": "Hotel",
+          "minimum_amount": 300,
+          "weight": 0.25,
+          "feature_name": "hotel_booking_signal"
+        },
+        {
+          "signal_name": "Foreign exchange or travel card activity detected",
+          "merchant_category": "Forex",
+          "minimum_amount": 200,
+          "weight": 0.25,
+          "feature_name": "forex_signal"
+        }
+      ],
+      "ml_features": [
+        "matched_signal_count",
+        "total_event_related_spend",
+        "merchant_category_diversity",
+        "transaction_frequency",
+        "transaction_recency",
+        "customer_age",
+        "annual_income"
+      ],
+      "validation_rules": {
+        "requires_consent": true,
+        "requires_active_customer": true,
+        "requires_human_approval": true,
+        "block_if_confidence_below_threshold": true
+      },
+      "llm_context_fields": [
+        "customer_name",
+        "life_event_type",
+        "confidence_score",
+        "estimated_timeline",
+        "key_drivers",
+        "matched_signals",
+        "customer_profile"
+      ],
+      "recommended_next_step": "Personalised Recommendation"
+    },
+    {
+      "life_event_type": "Birthday",
+      "enabled": true,
+      "candidate_threshold": 0.3,
+      "minimum_confidence_score": 0.5,
+      "minimum_matched_signals": 2,
+      "estimated_timeline": "Current month",
+      "approval_required": true,
+      "description": "Detects birthday or celebration-related spending patterns.",
+      "transaction_signals": [
+        {
+          "signal_name": "Celebration related dining spend detected",
+          "merchant_category": "Dining",
+          "minimum_amount": 200,
+          "weight": 0.25,
+          "feature_name": "dining_spend_signal"
+        },
+        {
+          "signal_name": "Gift purchase detected",
+          "merchant_category": "Gifts",
+          "minimum_amount": 100,
+          "weight": 0.25,
+          "feature_name": "gift_purchase_signal"
+        },
+        {
+          "signal_name": "Event or party booking detected",
+          "merchant_category": "Event Booking",
+          "minimum_amount": 300,
+          "weight": 0.25,
+          "feature_name": "party_booking_signal"
+        }
+      ],
+      "ml_features": [
+        "matched_signal_count",
+        "total_event_related_spend",
+        "merchant_category_diversity",
+        "transaction_frequency",
+        "transaction_recency",
+        "customer_age"
+      ],
+      "validation_rules": {
+        "requires_consent": true,
+        "requires_active_customer": true,
+        "requires_human_approval": true,
+        "block_if_confidence_below_threshold": true
+      },
+      "llm_context_fields": [
+        "customer_name",
+        "life_event_type",
+        "confidence_score",
+        "estimated_timeline",
+        "key_drivers",
+        "matched_signals",
+        "customer_profile"
+      ],
+      "recommended_next_step": "Personalised Recommendation"
+    },
+    {
+      "life_event_type": "Home Purchase",
+      "enabled": true,
+      "candidate_threshold": 0.35,
+      "minimum_confidence_score": 0.65,
+      "minimum_matched_signals": 2,
+      "estimated_timeline": "3 to 6 months",
+      "approval_required": true,
+      "description": "Detects possible home purchase planning from property and loan-related transactions.",
+      "transaction_signals": [
+        {
+          "signal_name": "Property agent payment detected",
+          "merchant_category": "Property Services",
+          "minimum_amount": 500,
+          "weight": 0.3,
+          "feature_name": "property_services_signal"
+        },
+        {
+          "signal_name": "Mortgage or loan fee detected",
+          "merchant_category": "Loan Services",
+          "minimum_amount": 300,
+          "weight": 0.25,
+          "feature_name": "loan_services_signal"
+        },
+        {
+          "signal_name": "Home furnishing spend detected",
+          "merchant_category": "Home Furnishing",
+          "minimum_amount": 1000,
+          "weight": 0.25,
+          "feature_name": "home_furnishing_signal"
+        }
+      ],
+      "ml_features": [
+        "matched_signal_count",
+        "total_event_related_spend",
+        "merchant_category_diversity",
+        "transaction_frequency",
+        "transaction_recency",
+        "customer_age",
+        "annual_income",
+        "risk_profile"
+      ],
+      "validation_rules": {
+        "requires_consent": true,
+        "requires_active_customer": true,
+        "requires_human_approval": true,
+        "block_if_confidence_below_threshold": true
+      },
+      "llm_context_fields": [
+        "customer_name",
+        "life_event_type",
+        "confidence_score",
+        "estimated_timeline",
+        "key_drivers",
+        "matched_signals",
+        "customer_profile"
+      ],
+      "recommended_next_step": "Personalised Recommendation"
+    },
+    {
+      "life_event_type": "Education",
+      "enabled": true,
+      "candidate_threshold": 0.35,
+      "minimum_confidence_score": 0.6,
+      "minimum_matched_signals": 2,
+      "estimated_timeline": "3 to 12 months",
+      "approval_required": true,
+      "description": "Detects likely education planning from school, university, or education-related transactions.",
+      "transaction_signals": [
+        {
+          "signal_name": "Education fee payment detected",
+          "merchant_category": "Education",
+          "minimum_amount": 1000,
+          "weight": 0.35,
+          "feature_name": "education_fee_signal"
+        },
+        {
+          "signal_name": "Exam or admission fee detected",
+          "merchant_category": "Exam Fees",
+          "minimum_amount": 100,
+          "weight": 0.25,
+          "feature_name": "exam_fee_signal"
+        },
+        {
+          "signal_name": "Student travel or accommodation payment detected",
+          "merchant_category": "Student Accommodation",
+          "minimum_amount": 500,
+          "weight": 0.25,
+          "feature_name": "student_accommodation_signal"
+        }
+      ],
+      "ml_features": [
+        "matched_signal_count",
+        "total_event_related_spend",
+        "merchant_category_diversity",
+        "transaction_frequency",
+        "transaction_recency",
+        "customer_age",
+        "annual_income"
+      ],
+      "validation_rules": {
+        "requires_consent": true,
+        "requires_active_customer": true,
+        "requires_human_approval": true,
+        "block_if_confidence_below_threshold": true
+      },
+      "llm_context_fields": [
+        "customer_name",
+        "life_event_type",
+        "confidence_score",
+        "estimated_timeline",
+        "key_drivers",
+        "matched_signals",
+        "customer_profile"
+      ],
+      "recommended_next_step": "Personalised Recommendation"
+    }
+  ]
+}
