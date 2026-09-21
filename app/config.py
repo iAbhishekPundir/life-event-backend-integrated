@@ -54,6 +54,17 @@ class Settings:
     )
     llm_timeout_seconds: int = int(os.getenv("LLM_TIMEOUT_SECONDS") or "30")
 
+    # --- Capability Compass integration ---
+    # Wealth Client Prospecting's active subprocesses gate which workflow
+    # steps this app shows. Short timeout deliberately -- unlike the LLM
+    # call, this sits in the critical path of every /api/workflow-steps
+    # request, and callers fail open (show all steps) rather than wait.
+    compass_api_url: str = os.getenv(
+        "COMPASS_API_URL",
+        "http://20.41.220.186/Capability-Compass/api/capabilities/23",
+    )
+    compass_timeout_seconds: float = float(os.getenv("COMPASS_TIMEOUT_SECONDS") or "5")
+
     @property
     def allowed_origins_list(self) -> list:
         return [origin.strip() for origin in self.allowed_origins.split(",") if origin.strip()]
